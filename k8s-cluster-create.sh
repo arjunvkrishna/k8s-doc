@@ -1,0 +1,13 @@
+eksctl create cluster \
+  --name prod-eks-cluster \ #specify name of cluster
+  --version 1.28 \  #specify version
+  --region ap-south-1 \  #specify region
+  --nodegroup-name eks-ec2-linux-nodes \
+  --node-type t3.medium \
+  --nodes 2 \
+  --nodes-min 1 \
+  --nodes-max 3 \
+  --managed \
+  --auto-kubeconfig \
+  --node-private-networking \
+  --verbose 3
